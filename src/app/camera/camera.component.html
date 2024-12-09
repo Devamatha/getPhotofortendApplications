@@ -1,0 +1,50 @@
+<div class="overlay" *ngIf="isLoading">
+    <div class="spinner-border text-light"  role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+
+<form [formGroup]="faceCapturing"> 
+    <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)" (initError)="handleInitError($event)"></webcam>
+  
+  </form>
+
+<!-- 
+
+<div class="container">
+    <form [formGroup]="faceCapturing" (ngSubmit)="onSubmit()">
+        <div class="webcam-container">
+            <div class="cam_container">
+                <div class="circle">
+                    <div class="circle-clip">
+                        <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam>
+                    </div>
+                    <div class="mask">
+                        <div
+                        style="background-color: black; width: 100%; height: 480px;position: absolute; z-index: 1; opacity: 75%;">
+                        </div>
+                        <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+   
+        <div class="coolinput w-100 mb-3">
+            <label for="input" class="text">FulllName:</label>
+            <input type="text" class="input" id="floatingInput" placeholder="Full Name" formControlName="fullName">
+        </div>
+
+
+        <button type="submit" class="btn sign btn-primary me-2" [disabled]="isLoading" (click)="onSubmit()">
+            <ng-container *ngIf="!isLoading">Submit</ng-container>
+            <ng-container *ngIf="isLoading">
+                <span class="spinner-border text-secondary" role="status" aria-hidden="true"></span>
+                Submitting...
+            </ng-container>
+        </button>
+
+
+    </form>
+</div> -->

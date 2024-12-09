@@ -1,0 +1,27 @@
+.user-icon {
+    font-size: 2.5rem;
+    border-radius: 50%;
+    background-color: #070707;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .eventdetails {
+    background-color: #e2e2e2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+  }
+  
+  @media (min-width: 320px) and (max-width: 425px) {
+    .eventdata{
+      margin-left: 27%;
+      width: 73%;
+  }
+  }
+  @media (min-width: 426px) and (max-width: 768px) {
+    .eventdata{
+      margin-left: 27%;
+      width: 73%;
+  }
+  }

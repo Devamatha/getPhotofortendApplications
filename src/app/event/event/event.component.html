@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="container d-flex justify-content-center align-items-center vh-100 eventdata"
+  >
+    <div class="">
+      <div class="eventdetails">
+        <form
+          [formGroup]="eventForm"
+          (ngSubmit)="onSubmit()"
+          class="p-4 border rounded shadow bg-white text-center"
+        >
+          <div class="text-center mb-4">
+            <i class="pi pi-user user-icon"></i>
+            <h4>Event Creation Form</h4>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <label> Event Name:<sup class="text-danger">*</sup></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="eventName"
+                required
+                maxlength="50"
+                pattern="[A-Za-z ]+"
+                placeholder="Please enter the event name"
+              />
+              <div
+                *ngIf="
+                  eventForm.get('eventName')?.invalid &&
+                  eventForm.get('eventName')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventName')?.errors?.['required']"
+                  >Please enter Name</small
+                >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventName')?.errors?.['maxlength']"
+                  >Name should have at most 50 characters</small
+                >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventName')?.errors?.['pattern']"
+                  >Invalid Name</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <label>Event Address:<sup class="text-danger">*</sup></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="eventAddress"
+                required
+                maxlength="50"
+                pattern="[A-Za-z ]+"
+                placeholder="Please enter the event address"
+              />
+              <div
+                *ngIf="
+                  eventForm.get('eventAddress')?.invalid &&
+                  eventForm.get('eventAddress')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventAddress')?.errors?.['required']"
+                  >Please enter Event Address</small
+                >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventAddress')?.errors?.['maxlength']"
+                  >Address should have at most 50 characters</small
+                >
+                <small
+                  class="text-danger"
+                  *ngIf="eventForm.get('eventAddress')?.errors?.['pattern']"
+                  >Invalid Address</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <label>Event Date:<sup class="text-danger">*</sup></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="date"
+                [min]="minDate"
+                class="form-control"
+                formControlName="eventDate"
+                required
+                placeholder="Please enter the event date"
+              />
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="isLoading"
+            >
+              <ng-container *ngIf="!isLoading">Submit</ng-container>
+              <ng-container *ngIf="isLoading">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Loading...
+              </ng-container>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

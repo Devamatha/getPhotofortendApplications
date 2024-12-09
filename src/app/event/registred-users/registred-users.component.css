@@ -1,0 +1,139 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .p-inputtext {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  .headerDetails{
+    background-color: #2ecc71;
+  }
+  .p-cell-editor {
+    position: relative;
+  }
+  
+  .p-cell-editor .ui-inputtext {
+    width: 100%;
+  }
+  
+
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .ui-button-info {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .ui-button-success {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .ui-button-danger {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+ .p-input-icon-left {
+     position: relative;
+ }
+
+ .p-input-icon-left .pi {
+     position: absolute;
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     color: #aaa;
+ }
+ 
+
+ .p-input-icon-left input {
+     padding-left: 30px; 
+ }
+ 
+ 
+
+ .p-input-icon-left {
+     position: relative;
+ }
+ 
+
+ .p-input-icon-left .pi {
+     position: absolute;
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     color: #aaa;
+ }
+ 
+ .p-input-icon-left input {
+     padding-left: 30px; 
+ }
+ 
+ .edit-trash-icons {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+ }
+ 
+
+
+ @media(min-width:320px)and (max-width:425px){
+  .card {
+    margin-top: 5%;
+    height: 95%;
+    margin-left: 32%;
+    width: 68%;
+}
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .card {
+    margin-top: 5%;
+    height: 95%;
+    margin-left: 27%;
+    width: 73%;
+}
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    margin-top: 5%;
+    height: 95%;
+    margin-left: 21%;
+    width: 79%;
+}
+}
+@media (min-width: 1025px){
+  .card {
+    margin-top: 5%;
+    height: 95%;
+    margin-left: 16%;
+    width: 84%;
+}
+}

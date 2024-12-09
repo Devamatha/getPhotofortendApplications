@@ -1,0 +1,142 @@
+<div class="Layout">
+  <div class="row m1">
+    <div class="col-xl-8 col-lg-8 col-md-8">
+      <div class="card cardDetails" *ngIf="getdataDetails">
+        <div class="card-body vectorimage">
+          <h5 class="card-title">Hello, {{ getdataDetails }} !</h5>
+          <h5 class="card-text">
+            Welcome back ! You have monthly subscription Activation.
+          </h5>
+<!-- 
+          <h5 class="card-text">Exprie on</h5>
+          <h5 class="card-text">AUG 28</h5> -->
+          <button class="reacharge btn">
+            Reacharge now <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="d-lg-flex d-xl-flex d-md-flex d-sm-flex">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4  mt-2">
+          <div class="card border-success">
+            <div class="card-header bg-transparent border-success d-flex">
+              <img
+                src="/assets/images/Vector.png"
+                alt="icon2"
+                width="24px"
+                height="24px"
+              />
+              <p class="users">Users</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="userChart"></canvas>
+              <div class="total-users">
+                <h2>{{ responseData?.totalUsers }}</h2>
+                <span>Total users</span>
+              </div>
+            </div>
+            <div class="user-details">
+              <div class="active-users">
+                <div class="d-flex">
+                  <span class="ps-3">Active</span>
+
+                  <h3 class="ps-3">{{ responseData?.totalUsers }}</h3>
+                  <!-- <p class="ps-3">65%</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+          <div class="card border-success imagestotal mt-2 ms-2">
+            <div class="card-body">
+              <div class="Frame2">
+                <img src="/assets/images/Frame2.png" alt="icon2" />
+              </div>
+              <h5 class="card-title">
+                {{ responseData?.totalUploadedImages }} /
+                {{ responseData?.totalAllowedImages }}
+              </h5>
+              <p class="card-text">images uploaded</p>
+              <img src="/assets/images/Rectangle14.png" class="d-none d-lg-block d-xl-block" alt="" />
+            </div>
+          </div>
+          <div class="d-lg-flex d-xl-flex  d-md-flex d-sm-flex">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2">
+              <div class="card border-success bluecolourcard ms-2">
+                <div class="card-body">
+                  <div class="frame16">
+                    <img
+                      src="/assets/images/Frame16.png"
+                      alt=""
+                      width="20px"
+                      height="20px"
+                    />
+                  </div>
+
+                  <!-- <h6 class="card-title">Events</h6> -->
+
+                  <p class="card-text">Events</p>
+                  <p class="card-title">{{ responseData?.eventsTotal }}</p>
+
+                  <p class="card-text">
+                    {{ responseData?.eventsTotal }} complete
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2">
+              <div class="card border-success yellowcolourcard ms-2">
+                <div class="card-body">
+                  <div class="Frame15">
+                    <img
+                      src="/assets/images/Frame15.png"
+                      alt=""
+                      width="20px"
+                      height="20px"
+                    />
+                  </div>
+
+                  <p class="card-text text-black">Events</p>
+                  <p class="card-title">{{ responseData?.eventsTotal }}</p>
+                  <p class="card-text">
+                    {{ responseData?.eventsTotal }} complete
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 dynamic">
+      <div class="scrollable-container">
+        <div
+          class="card mastercards"
+          *ngFor="let event of viewDataOfphotographer"
+        >
+          <div class="card-body">
+            <div class="card-content">
+              <p class="date">Created on<br />{{ event.eventDate | date }}</p>
+
+              <h2>{{ event.eventName }}</h2>
+              <p>{{ event.eventAddress }}</p>
+
+              <div class="stats">
+                <div class="stat">
+                  <img src="path_to_icon1" alt="icon1" />
+                  <span>{{ event.totalImages }}+</span>
+                </div>
+                <div class="stat">
+                  <img src="/assets/images/Frame2.png" alt="icon2" />
+                  <span>{{ event.totalImages }}</span>
+                </div>
+                <a class="recharge-button">Recharge Now -></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

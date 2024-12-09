@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #imagew {
+    height: 300px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .rightside {
+    text-align: right;
+    padding: 40px;
+  }
+
+  .otpparent {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .otpcolor {
+    background-color: #ff6d00;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .mbcolor {
+    background-color: #ff6d00;
+  }
+
+  .whatsapplogo {
+    color: rgb(27, 212, 27);
+    text-align: center;
+  }
+
+  .butnotp {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .whatsapplogotext h5 {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .error {
+    color: red;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .rightside {
+      display: none;
+    }
+
+    .smalldevices {
+      width: 100%;
+    }
+
+    .whatsapplogo,
+    .whatsapplogotext {
+      text-align: center;
+    }
+  }
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .rightside {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .smalldevices {
+      width: 100%;
+    }
+
+    .whatsapplogo,
+    .whatsapplogotext {
+      text-align: center;
+    }
+  }

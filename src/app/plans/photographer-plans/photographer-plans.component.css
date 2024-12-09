@@ -1,0 +1,16 @@
+.plansdetails{
+  background-color: rgb(167, 16, 226);
+}
+@media (min-width: 320px) and (max-width:450px){
+  .upgradePlans{
+   margin-left: 25%;
+   width: 75%;
+  } 
+}
+
+@media (min-width: 456px) and (max-width:768px){
+  .upgradePlans{
+   margin-left: 25%;
+   width: 75%;
+  } 
+}

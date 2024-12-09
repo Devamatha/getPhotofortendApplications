@@ -1,0 +1,72 @@
+<div
+  class="container-fluid d-flex justify-content-center upgradePlans overflow-auto text-center"
+>
+  <div class="row">
+   <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-4 m-2" *ngFor="let response of responseData" > -->
+      
+      
+      <div class="col m-2" *ngFor="let response of responseData" >
+
+      <div class="card" >
+        <div class="plansdetails">
+          <h5 class="card-title">{{ response.planType }}</h5>
+        </div>
+       
+        <div class="card-body">
+          <!-- <h5 class="card-title">{{ response.planType }}</h5> -->
+          <p class="card-title">
+            <b> ${{ response.amount }}</b>
+          </p>
+          <p class="card-text">{{ response.planType }}</p>
+          <p class="card-text">
+            Total Images can Upload for Plan <b> {{ response.totalImages }}</b>
+          </p>
+          <ul class="list-unstyled">
+            <li *ngFor="let feature of response.additionalFeatures?.split(',')" >
+              <b> {{ feature.trim() }}</b>
+            </li>
+          </ul>
+
+          <a
+            class="btn btn-primary"
+            (click)="
+              upgradePlans(
+                response.amount,
+                response.totalImages,
+                response.planType
+              )
+            "
+            >Up Grade</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- <div class="plan plan1">
+          <div class="header">Enterprise</div>
+          <div class="price">$59</div>
+          <div class="Monthly">per month</div>
+          <ul>
+            <li><b>unlimited Events</b></li>
+            <li><b> 100 Images</b></li>
+            <li><b>Maintaince</b></li>
+          </ul>
+          <a class="signup" (click)="upgradePlans(59.0, 100, 'Monthly')"
+            >Up Grade</a
+          >
+        </div> -->
+
+    <!-- <div class="plan plan2 popular-plan">
+          <div class="header">Professional</div>
+          <div class="price">499</div>
+          <div class="Monthly">per month</div>
+          <ul>
+            <li><b> 1000 Images</b></li>
+            <li><b>Unlimited Events</b></li>
+            <li><b>Maintaince</b></li>
+          </ul>
+          <a class="signup" (click)="upgradePlans(499.0, 1000, 'Quarterly')"
+            >Up Grade</a
+          >
+        </div> -->
+  </div>
+</div>

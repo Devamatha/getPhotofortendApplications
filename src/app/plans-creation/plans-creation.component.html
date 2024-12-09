@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="container d-flex justify-content-center align-items-center vh-100 eventdata"
+  >
+    <div class="">
+      <div class="eventdetails">
+        <form
+          [formGroup]="planform"
+          (ngSubmit)="onSubmit()"
+          class="p-4 border rounded shadow bg-white text-center"
+        >
+          <div class="text-center mb-4">
+           
+            <h4>Plan  Creation Form</h4>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <label> Plan Type:<sup class="text-danger">*</sup></label>
+            </div>
+          
+            <div class="col-6">
+              <select formControlName="planType"   class="form-control">
+                <option value="Quarterly">Quarterly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+               
+              </select>
+              <div
+                *ngIf="
+                  planform.get('planType')?.invalid &&
+                  planform.get('planType')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="planform.get('planType')?.errors?.['required']"
+                  >Please enter plan Type</small
+                >
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-6">
+              <label>Amount:<sup class="text-danger">*</sup></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="amount"
+                required
+                maxlength="50"
+                
+                placeholder="Please enter the event address"
+              />
+              <div
+                *ngIf="
+                  planform.get('amount')?.invalid &&
+                  planform.get('amount')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="planform.get('amount')?.errors?.['required']"
+                  >Please enter Amount</small
+                >
+               
+              </div>
+            </div>
+          </div>
+
+      
+          <div class="row mb-3">
+          <div class="col-6">
+            <label>totalImages Can Upload:<sup class="text-danger">*</sup></label>
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+            
+              class="form-control"
+              formControlName="totalImages"
+              required
+              placeholder="Please enter the totalImages"
+            />
+          </div>
+        </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label>Discription:<sup class="text-danger">*</sup></label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+             
+                class="form-control"
+                formControlName="discription"
+                required
+                placeholder="Please enter the discription"
+              />
+            </div>
+          </div> 
+          <div class="row mb-3">
+          <div class="col-6">
+            <label>Additional Features:<sup class="text-danger">*</sup></label>
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+            
+              class="form-control"
+              formControlName="additionalFeatures"
+              required
+              placeholder="Please enter the additionalFeatures"
+            />
+          </div>
+        </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="isLoading"
+            >
+              <ng-container *ngIf="!isLoading">Submit</ng-container>
+              <ng-container *ngIf="isLoading">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Loading...
+              </ng-container>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

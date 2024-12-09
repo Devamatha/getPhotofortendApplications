@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'intl-tel-input/build/css/intlTelInput.css';
+@import "primeicons/primeicons.css";
+
+
+  /*
+  @media (min-width:425px) {
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-left:150px;
+    }
+  }
+  @media (min-width: 1200px) { 
+    .card{
+      margin-left: 10%;
+      width: 90%;
+    }
+   } */
+  
